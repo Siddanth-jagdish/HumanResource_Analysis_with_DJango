@@ -1,0 +1,59 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+  <h2>New Employee joining</h2>
+
+  <h3>Please Enter Employee Details Here</h3>
+  <br>
+   {%  if scoreval  %}
+  <form method="post" enctype="multipart/form-data" action="updateDataBase">
+   {% else %}
+   <form method="post" enctype="multipart/form-data" action="predictemp">
+   {% endif%}
+
+
+  {% csrf_token %}
+  <div class="col-md-4 col-sm-4"><label for="fname">Age:</label> </div> <input name="ageval" type="text" value={{temp.Age}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">Gender:</label> </div> <input name="gndrval" type="text" value={{temp.Gender}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EducationBackground:</label> </div> <input name="educbkgval" type="text" value={{temp.EducationBackground}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">MaritalStatus:</label> </div> <input name="mrtstsval" type="text" value={{temp.MaritalStatus}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpDepartment:</label> </div> <input name="empdptval" type="text" value={{temp.EmpDepartment}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpJobRole:</label> </div> <input name="Sales Executive" type="text" value={{temp.EmpJobRole}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">BusinessTravelFrequency:</label> </div> <input name="bsnstrvlfrqval" type="text" value={{temp.BusinessTravelFrequency}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">DistanceFromHome:</label> </div> <input name="disthomeval" type="text" value={{temp.DistanceFromHome}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpEducationLevel:</label> </div> <input name="educlvlval" type="text" value={{temp.EmpEducationLevel}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpEnvironmentSatisfaction:</label> </div> <input name="empenvsatval" type="text" value={{temp.EmpEnvironmentSatisfaction}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpHourlyRate:</label> </div> <input name="emphrval" type="text" value={{temp.EmpHourlyRate}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpJobInvolvement:</label> </div> <input name="empjobinval" type="text" value={{temp.EmpJobInvolvement}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpJobLevel:</label> </div> <input name="empjbval" type="text" value={{temp.EmpJobLevel}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpJobSatisfaction:</label> </div> <input name="empjbsatval" type="text" value={{temp.EmpJobSatisfaction}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">NumCompaniesWorked:</label> </div> <input name="cmpworkdval" type="text" value={{temp.NumCompaniesWorked}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">OverTime:</label> </div> <input name="ovrtimval" type="text" value={{temp.OverTime}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpLastSalaryHikePercent:</label> </div> <input name="hikeprcntval" type="text" value={{temp.EmpLastSalaryHikePercent}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpRelationshipSatisfaction:</label> </div> <input name="emprelatsatval" type="text" value={{temp.EmpRelationshipSatisfaction}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">TotalWorkExperienceInYears:</label> </div> <input name="workexpval" type="text" value={{temp.TotalWorkExperienceInYears}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">TrainingTimesLastYear:</label> </div> <input name="traintimlstyrval" type="text" value={{temp.TrainingTimesLastYear}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">EmpWorkLifeBalance:</label> </div> <input name="wrklifbalval" type="text" value={{temp.EmpWorkLifeBalance}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">ExperienceYearsAtThisCompany:</label> </div> <input name="expyrsatcmpval" type="text" value={{temp.ExperienceYearsAtThisCompany}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">ExperienceYearsInCurrentRole:</label> </div> <input name="expyrscurrolval" type="text" value={{temp.ExperienceYearsInCurrentRole}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">YearsSinceLastPromotion:</label> </div> <input name="yrssinlastprval" type="text" value={{temp.YearsSinceLastPromotion}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">YearsWithCurrManager:</label> </div> <input name="yrscurmngval" type="text" value={{temp.YearsWithCurrManager}}> <br><br>
+  <div class="col-md-4 col-sm-4"><label for="fname">Attrition:</label> </div> <input name="attrval" type="text" value={{temp.Attrition}}> <br><br>
+  <br>
+  {%  if scoreval  %}
+  <h1>The employee Performance Rating is {{scoreval}}</h1>
+  <h3>If the response is good. Do you weant to save it in DB?
+  </h3>
+  <input type="hidden" id="fname" name="empval" value={{scoreval}}>
+  <input type="submit" value="Submit" ></div>
+  {% else%}
+  <input type="submit" value="Submit" ></div>
+
+  {% endif %}
+
+  </form>
+  <br>
+
+
+  {% endblock %}
