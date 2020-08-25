@@ -1,4 +1,5 @@
-# Human_Resource_Analysis
+# Human_Resource_Analysis_with_Django
+
 Implemented analysis of employee performance based on various features as experience, salary, educational performance and many more. Have downloaded data "INX_Future_Inc_Employee_Performance_CDS_Project2_Data_V1.8" and had to do some data cleaning as required. Have completed some Exploratory Data analysis just to get a better view of Data. Have used 6 machine Learning algorithms which are random forest classifier, support vector machine, decision tree, bernoulli naive bayes, k nearest neighbor and artificial neural network and have done performance evaluation based on confusion matrix, classification report and accuracy score. Obtained a pretty good looking result and as expected Random Forest Classifier out performs all others in this scenario as there are a lot of features and it does maintain accuracy for large proportion of data and as it doesn't allow the model to overfit.   
 
 Have used django as a framework to display easy way to check how well the model functions and also have made use of MongoDB, to save to the database as and when necessary.
